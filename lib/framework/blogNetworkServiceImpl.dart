@@ -1,7 +1,9 @@
 import 'dart:core';
 import 'dart:convert';
+import 'package:blog_mobile/business/models/AjouterCommentaire.dart';
 import 'package:blog_mobile/business/models/Authentication.dart';
 import 'package:blog_mobile/business/models/User.dart';
+import 'package:blog_mobile/business/models/comment.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:http/http.dart' as http;
 import '../business/services/blogNetworkService.dart';
@@ -11,7 +13,7 @@ class Blognetworkserviceimpl implements Blognetworkservice{
   GetStorage? box;
   @override
   Future<User> authentifier (Authentification data) async {
-    var url=Uri.parse("http://10.252.252.46:8000/api/login");
+    var url=Uri.parse("http://127.0.0.1/api/login");
     var body=jsonEncode(data.toJson());
     var response= await http.post(
         url,
@@ -32,6 +34,24 @@ class Blognetworkserviceimpl implements Blognetworkservice{
     var user= User.fromJson(resultat);
     return user ;
 
+  }
+
+  @override
+  Future<bool> ajouterCommentaire(AjouterCommentaire data) {
+    // TODO: implement ajouterCommentaire
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<List<Comment>> recupererCommentaires(int articleId) {
+    // TODO: implement recupererCommentaires
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<bool> supprimerCommentaire(int commentId) {
+    // TODO: implement supprimerCommentaire
+    throw UnimplementedError();
   }
 }
 
