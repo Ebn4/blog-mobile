@@ -1,3 +1,4 @@
+import 'package:blog_mobile/pages/commentaire/commentPage.dart';
 import 'package:blog_mobile/pages/list-artcle/listArticle.dart';
 import 'package:blog_mobile/pages/login/LoginPage.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +15,7 @@ class Myapp extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: LoginPage(),
+      home: CommentPage(),
       debugShowCheckedModeBanner: false,
     );
   }
